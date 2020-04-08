@@ -7,7 +7,11 @@ const Charts = ({ coinData }) => {
 
   return (
     <div className="charts">
-      {url === "/europe" ? <h1>europe</h1> : <h1>us</h1>}
+      {url === "/europe" ? (
+        <h1 className="country">europe</h1>
+      ) : (
+        <h1 className="country">us</h1>
+      )}
       {coinData.map((coin) => (
         <div className="chart__container" key={coin.name}>
           <h2 className="coin__title">{coin.name}</h2>

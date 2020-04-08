@@ -11,15 +11,25 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <h1>Crypto Tracker</h1>
-      <div>
+      <div className="links">
         <div className="dark-mode__toggle">
           <div
             onClick={toggleMode}
             className={darkMode ? "toggle toggled" : "toggle"}
           />
         </div>
-        <NavLink to="/">Us</NavLink>
-        <NavLink to="/europe">Europe</NavLink>
+        <div className="links-wrapper">
+          <NavLink
+            to="/"
+            activeClassName="active"
+            className={darkMode ? "light-mode" : "add-class"}
+          >
+            Us
+          </NavLink>
+          <NavLink to="/europe" activeClassName="active">
+            Europe
+          </NavLink>
+        </div>
       </div>
     </nav>
   );
