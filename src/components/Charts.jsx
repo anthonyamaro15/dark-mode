@@ -1,10 +1,18 @@
 import React from "react";
+import { useRouteMatch } from "react-router-dom";
 import Chart from "./Chart";
 
 const Charts = ({ coinData }) => {
+  const { url } = useRouteMatch();
+
   return (
     <div className="charts">
-      {coinData.map(coin => (
+      {url === "/europe" ? (
+        <h1 className="country">europe</h1>
+      ) : (
+        <h1 className="country">us</h1>
+      )}
+      {coinData.map((coin) => (
         <div className="chart__container" key={coin.name}>
           <h2 className="coin__title">{coin.name}</h2>
           <h4 className="coin__symbol">{coin.symbol}</h4>
